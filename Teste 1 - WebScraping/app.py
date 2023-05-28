@@ -1,4 +1,4 @@
-# Necessário efetuar instalação das libs html5lib, beautifulSoup e requests.
+# Necessário efetuar instalação das libs html5lib, beautifulSoup4 e requests.
 
 import os
 from zipfile import ZipFile
@@ -16,7 +16,7 @@ data = div.find_all("a", class_="internal-link")
 file_links = []
 file_list = ["Anexo I - Lista completa de procedimentos (.pdf)", "Anexo I - Lista completa de procedimentos (.xlsx)", "Anexo II - Diretrizes de utilização (.pdf)", "Anexo III - Diretrizes clínicas (.pdf)", "Anexo IV - Protocolo de utilização (.pdf)"]
 
-#Pega o link atraves do atributo 'href' contido na tag.
+#Pega o link atraves do atributo 'href' contido na tag se o texto em <a> for igual ao que estão contidos em 'file_list'
 for links in data:
     if links.text in file_list:
         file_links.append(links["href"])
